@@ -8,8 +8,8 @@ With TabBarIOS/DrawerLayoutAndroid and Leancloud for work.
 ## 参考资料
 1. LeanCloud数据存储Javascript[文档](https://leancloud.cn/docs/leanstorage_guide-js.html)
 2. 程序菜单：
-- [TabBarIOS](https://facebook.github.io/react-native/docs/tabbarios.html)
-- [DrawerLayoutAndroid](https://facebook.github.io/react-native/docs/drawerlayoutandroid.html)
+ [TabBarIOS](https://facebook.github.io/react-native/docs/tabbarios.html)
+ [DrawerLayoutAndroid](https://facebook.github.io/react-native/docs/drawerlayoutandroid.html)
 3. [Toast](https://github.com/magicismight/react-native-root-toast)
 
 ## 实践项目
