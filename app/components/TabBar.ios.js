@@ -16,18 +16,15 @@ export default class TabBar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedTab: '关于',
+      selectedTab: '搜索',
     };
   }
 
   _renderAbout() {
     return (
       <View style={styles.tabContent}>
-        <Text style={styles.aboutText}>程序：With TabBarIOS and Leancloud for work.</Text>
-        <Text style={styles.aboutText}>作者：米尧</Text>
-        <Text style={styles.aboutText}>志向：去福音未得之地传福音（罗15:20）。</Text>
-        <Text style={styles.aboutText}>人生目标：认识基督，晓得他复活的大能，并且晓得和他一同受苦，效法他的死（腓3:10）。</Text>
-
+        <Text style={styles.aboutText}>Programm：With TabBarIOS and Leancloud for work.</Text>
+        <Text style={styles.aboutText}>Author：Titos Mi</Text>
       </View>
     );
   }
@@ -36,15 +33,15 @@ export default class TabBar extends Component {
     return (
       <View style={{flex:1}}>
         <Text style={styles.welcome}>
-          Work5Leancloud（Titos Mi）
+          Work5Leancloud
         </Text>
         <TabBarIOS
-            style={{flex:1,alignItems:"flex-end"}}
-            tintColor="white"
-            barTintColor="#072">
+            style={{flex:1,alignItems:'flex-end'}}
+            tintColor='white'
+            barTintColor='#072'>
           <TabBarIOS.Item
-              title="搜索"
-              systemIcon="search"
+              title='搜索'
+              systemIcon='search'
               selected={this.state.selectedTab === '搜索'}
               onPress={() => {
                 this.setState({
@@ -55,7 +52,7 @@ export default class TabBar extends Component {
             <SearchApp />
           </TabBarIOS.Item>
           <TabBarIOS.Item
-              systemIcon="favorites"
+              systemIcon='favorites'
               selected={this.state.selectedTab === '收藏夹'}
               onPress={() => {
                 this.setState({
@@ -66,7 +63,7 @@ export default class TabBar extends Component {
             <Favorite />
           </TabBarIOS.Item>
           <TabBarIOS.Item
-              systemIcon="more"
+              systemIcon='more'
               selected={this.state.selectedTab === '关于'}
               onPress={() => {
                 this.setState({
