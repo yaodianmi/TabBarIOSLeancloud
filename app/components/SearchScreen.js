@@ -29,7 +29,6 @@ import {
 } from '../actions';
 
 
-const doubanImgLogo = 'https://img3.doubanio.com/f/shire/8308f83ca66946299fc80efb1f10ea21f99ec2a5/pics/nav/lg_main_a11_1.png'
 const doubanApiBookSearch = 'https://api.douban.com/v2/book/search'
 
 
@@ -37,7 +36,7 @@ class Logo extends Component{
   render(){
     return (
       <Image
-        source={{uri: doubanImgLogo}}
+        source={require('../images/doubanImgLogo.png')}
         style={styles.logo}
       />
     );
