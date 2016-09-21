@@ -5,30 +5,10 @@
  * https://github.com/yaodianmi/Work5Leancloud
  */
 
-import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
-import { Provider } from 'react-redux';
-import configureStore from './app/store/configureStore';
-import App from './app/app';
+import TabBar from './app/components/TabBar';
 
 
-const store = configureStore()
-
-
-class Work5Leancloud extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
-  }
-}
-
-
-AppRegistry.registerComponent('Work5Leancloud', () => Work5Leancloud);
+AppRegistry.registerComponent('Work5Leancloud', () => TabBar);
