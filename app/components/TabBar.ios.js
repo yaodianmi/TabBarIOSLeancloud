@@ -8,7 +8,7 @@ import {
   TabBarIOS,
 } from 'react-native';
 
-import SearchApp from '../app';
+import SearchApp from './SearchApp';
 import Favorite from './Favorite';
 
 

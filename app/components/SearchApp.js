@@ -12,8 +12,8 @@ import {
     connect
 } from 'react-redux';
 
-import SearchScreenRoot from './containers/SearchScreenRoot';
-import BookScreen from './components/BookScreen';
+import SearchScreenRoot from '../containers/SearchScreenRoot';
+import BookScreen from './BookScreen';
 
 
 const NavigationBarRouteMapper = {
