@@ -8,7 +8,7 @@ import {
 	SEARCH_ENDED,
 	MORE_STARTED,
 	MORE_SEARCH_RESULT
-} from './constants/ActionTypes';
+} from '../constants/ActionTypes';
 
 
 const doubanApiBookSearch = 'https://api.douban.com/v2/book/search'

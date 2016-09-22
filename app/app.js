@@ -12,7 +12,7 @@ import {
     connect
 } from 'react-redux';
 
-import SearchScreenRoot from './containers/App';
+import SearchScreenRoot from './containers/SearchScreenRoot';
 import BookScreen from './components/BookScreen';
 
 

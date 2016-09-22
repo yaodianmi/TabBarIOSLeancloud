@@ -7,7 +7,7 @@ import {
     connect
 } from 'react-redux';
 
-import * as actionCreators from '../actions';
+import * as actionCreators from '../actions/search';
 import SearchScreen from '../components/SearchScreen';
 
 

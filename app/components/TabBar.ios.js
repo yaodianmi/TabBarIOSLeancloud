@@ -15,13 +15,9 @@ import Favorite from './Favorite';
 export default class TabBar extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      selectedTab: '搜索',
-    };
   }
 
   _renderAbout() {
-
     return (
       <View style={styles.tabContent}>
         <Text style={styles.aboutText}>Programm：With TabBarIOS and Leancloud for work.</Text>
@@ -43,33 +39,27 @@ export default class TabBar extends Component {
           <TabBarIOS.Item
               title='搜索'
               systemIcon='search'
-              selected={this.state.selectedTab === '搜索'}
+              selected={this.props.tab.selectedTab === 'search'}
               onPress={() => {
-                this.setState({
-                  selectedTab: '搜索',
-                });
+                this.props.actions.switchTab('search');
               }}
           >
             <SearchApp />
           </TabBarIOS.Item>
           <TabBarIOS.Item
               systemIcon='favorites'
-              selected={this.state.selectedTab === '收藏夹'}
+              selected={this.props.tab.selectedTab === 'favorites'}
               onPress={() => {
-                this.setState({
-                  selectedTab: '收藏夹',
-                });
+                this.props.actions.switchTab('favorites');
               }}
           >
             <Favorite />
           </TabBarIOS.Item>
           <TabBarIOS.Item
               systemIcon='more'
-              selected={this.state.selectedTab === '关于'}
+              selected={this.props.tab.selectedTab === 'about'}
               onPress={() => {
-                this.setState({
-                  selectedTab: '关于',
-                });
+                this.props.actions.switchTab('about');
               }}
           >
             {this._renderAbout()}

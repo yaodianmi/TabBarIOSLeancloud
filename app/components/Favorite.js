@@ -6,6 +6,8 @@ import {
   Text,
 } from 'react-native';
 
+import av from '../db/av';
+
 
 export default class Favorite extends Component {
   render() {

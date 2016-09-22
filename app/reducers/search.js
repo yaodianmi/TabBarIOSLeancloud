@@ -1,7 +1,5 @@
 'use strict'
 
-import { combineReducers } from 'redux';
-
 import {
 	SET_8_STAR,
 	SET_SEARCH_KEYWORD,

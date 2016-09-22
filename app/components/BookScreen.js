@@ -45,7 +45,7 @@ export default class BookScreen extends Component {
             </View>
             <View style={styles.mpaaWrapper}>
               <Text style={styles.mpaaText}>
-                收藏
+                点击收藏
               </Text>
             </View>
           </View>

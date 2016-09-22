@@ -3,11 +3,13 @@
 import {
   combineReducers
 }
-from 'redux'
-import search from './search'
+from 'redux';
+import search from './search';
+import tab from './tab';
 
 const rootReducer = combineReducers({
-  search
+  search,
+  tab
 })
 
 export default rootReducer

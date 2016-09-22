@@ -1,13 +1,14 @@
 'use strict';
 
-import av from '../node_modules/leancloud-storage/dist/node/av';
+import av from '../../node_modules/leancloud-storage/dist/node/av';
 
 
 // 初始化
 const appId = '7bQ0yQahIWdwXMimQIwdDhJC-gzGzoHsz';
 const appKey = 'WtaO7hx9Abj51SlO2MK4y9B7';
 const region = 'cn';
-const av.init({ appId, appKey, region });
+console.log(av);
+//const av.init({ appId, appKey, region });
 
 export default av;
 

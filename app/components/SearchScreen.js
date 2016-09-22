@@ -16,16 +16,13 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-import * as actionCreators from '../actions';
 import debounce from 'debounce';
 
 import SearchBar from './SearchBar';
 import BookCell from './BookCell';
 import {
-  runSearch,
-  set8Star,
   hasMore,
-} from '../actions';
+} from '../actions/search';
 
 
 const doubanApiBookSearch = 'https://api.douban.com/v2/book/search'
