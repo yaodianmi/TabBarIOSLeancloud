@@ -44,6 +44,11 @@ export default class BookScreen extends Component {
                 {this.props.book.rating.average}
               </Text>
             </View>
+            <View style={styles.mpaaWrapper}>
+              <Text style={styles.mpaaText}>
+                收藏
+              </Text>
+            </View>
           </View>
         </View>
         <View style={styles.separator} />

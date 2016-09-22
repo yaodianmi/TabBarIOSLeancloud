@@ -47,7 +47,7 @@ const NavigationBarRouteMapper = {
   }
 }
 
-export default class App extends Component {
+export default class SearchApp extends Component {
   renderScene(route, navigator){
     if(route.name == 'book_detail') {
       return <BookScreen book={route.book} navigator={navigator}/>

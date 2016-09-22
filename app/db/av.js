@@ -1,30 +1,17 @@
-/*
-  请参考 README.md 中的开发方式，
-  执行 gulp dev 该文件会被编译为 test-es5.js 并自动运行此文件
-*/
-
-/* eslint no-console: ["error", { allow: ["log"] }] */
-/* eslint no-undef: ["error", { "AV": true }] */
-
 'use strict';
 
-let av;
+import av from '../node_modules/leancloud-storage/dist/node/av';
 
-// 检测是否在 Nodejs 环境下运行
-if (typeof(process) !== 'undefined' && process.versions && process.versions.node) {
-  av = require('../dist/node/av');
-} else {
-  av = window.AV;
-}
 
 // 初始化
 const appId = '7bQ0yQahIWdwXMimQIwdDhJC-gzGzoHsz';
 const appKey = 'WtaO7hx9Abj51SlO2MK4y9B7';
 const region = 'cn';
+const av.init({ appId, appKey, region });
 
-av.init({ appId, appKey, region });
+export default av;
 
-// 基本存储
+/*// 基本存储
 const TestClass = av.Object.extend('TestClass');
 const testObj = new TestClass();
 testObj.set({
@@ -59,4 +46,4 @@ query.find().then((list) => {
 // 用户登录
 AV.User.login('ttt', '123456')
 .then((res) => console.log(res))
-.catch(err => console.log(err));
+.catch(err => console.log(err));*/

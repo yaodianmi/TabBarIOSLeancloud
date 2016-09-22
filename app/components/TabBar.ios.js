@@ -8,7 +8,7 @@ import {
   TabBarIOS,
 } from 'react-native';
 
-import SearchApp from './SearchApp';
+import SearchApp from '../app';
 import Favorite from './Favorite';
 
 
@@ -21,6 +21,7 @@ export default class TabBar extends Component {
   }
 
   _renderAbout() {
+
     return (
       <View style={styles.tabContent}>
         <Text style={styles.aboutText}>Programm：With TabBarIOS and Leancloud for work.</Text>

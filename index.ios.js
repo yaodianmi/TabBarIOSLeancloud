@@ -8,7 +8,7 @@
 import {
   AppRegistry,
 } from 'react-native';
-import TabBar from './app/components/TabBar';
+import TabBarApp from './app/components/TabBarApp';
 
 
-AppRegistry.registerComponent('Work5Leancloud', () => TabBar);
+AppRegistry.registerComponent('Work5Leancloud', () => TabBarApp);
