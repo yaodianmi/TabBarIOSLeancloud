@@ -41,7 +41,7 @@ export default class TabBar extends Component {
               systemIcon='search'
               selected={this.props.tab.selectedTab === 'search'}
               onPress={() => {
-                this.props.actions.switchTab('search');
+                this.props.actions.selectTab('search');
               }}
           >
             <SearchApp />
@@ -50,7 +50,7 @@ export default class TabBar extends Component {
               systemIcon='favorites'
               selected={this.props.tab.selectedTab === 'favorites'}
               onPress={() => {
-                this.props.actions.switchTab('favorites');
+                this.props.actions.selectTab('favorites');
               }}
           >
             <Favorite />
@@ -59,7 +59,7 @@ export default class TabBar extends Component {
               systemIcon='more'
               selected={this.props.tab.selectedTab === 'about'}
               onPress={() => {
-                this.props.actions.switchTab('about');
+                this.props.actions.selectTab('about');
               }}
           >
             {this._renderAbout()}

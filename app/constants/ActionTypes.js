@@ -8,4 +8,4 @@ export const MORE_STARTED = 'MORE_STARTED'
 export const MORE_SEARCH_RESULT = 'MORE_SEARCH_RESULT'
 export const NEW_SEARCH = 'NEW_SEARCH'
 
-export const SWITCH_TAB = 'SWITCH_TAB'
+export const SELECTED_TAB = 'SELECTED_TAB'

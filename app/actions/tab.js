@@ -1,15 +1,15 @@
 'use strict'
 
 import {
-	SWITCH_TAB,
+	SELECTED_TAB,
 } from '../constants/ActionTypes';
 
 
 // actionCreators
-export const switchTab = (tab) => (dispatch) => _switchTab(dispatch, tab)
+export const selectTab = (tab) => (dispatch) => _selectTab(dispatch, tab)
 
-const _switchTab = (dispatch, tab) => {
-	dispatch(_switchStarted(tab));
+const _selectTab = (dispatch, tab) => {
+	dispatch(_selectStarted(tab));
 }
 
-const _switchStarted = (tab) => ({type: SWITCH_TAB, tab})
+const _selectStarted = (tab) => ({type: SELECTED_TAB, tab})

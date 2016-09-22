@@ -1,7 +1,7 @@
 'use strict'
 
 import {
-	SWITCH_TAB,
+	SELECTED_TAB,
 } from '../constants/ActionTypes';
 
 const initialSearchState = {
@@ -10,7 +10,7 @@ const initialSearchState = {
 
 const tab = (state = initialSearchState, action) => {
 	switch(action.type) {
-    case SWITCH_TAB:
+    case SELECTED_TAB:
     	return Object.assign({}, state, {selectedTab: action.tab});
     default:
     	return state;
