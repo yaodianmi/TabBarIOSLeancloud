@@ -21,7 +21,6 @@ import debounce from 'debounce';
 
 import SearchBar from './SearchBar';
 import BookCell from './BookCell';
-import BookScreen from './BookScreen';
 import {
   runSearch,
   set8Star,

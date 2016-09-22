@@ -10,7 +10,6 @@ import {
   TouchableNativeFeedback,
   Platform
 } from 'react-native';
-import SearchScreen from './SearchScreen';
 
 export default class BookScreen extends Component {
   constructor(props) {
