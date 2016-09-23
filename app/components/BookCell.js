@@ -50,10 +50,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginBottom: 2,
   },
-  bookYear: {
-    color: '#999999',
-    fontSize: 12,
-  },
   row: {
     alignItems: 'center',
     backgroundColor: 'white',
@@ -65,10 +61,5 @@ const styles = StyleSheet.create({
     height: 93,
     marginRight: 10,
     width: 60,
-  },
-  cellBorder: {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    height: StyleSheet.hairlineWidth,
-    marginLeft: 4,
   },
 });

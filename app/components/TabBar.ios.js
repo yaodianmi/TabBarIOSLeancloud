@@ -10,11 +10,28 @@ import {
 
 import SearchApp from './SearchApp';
 import Favorite from './Favorite';
+import Login from './Login';
 
 
 export default class TabBar extends Component {
   constructor(props){
     super(props);
+  }
+
+  _renderFavorites() {
+    console.log(this.props.actions);
+    if (this.props.tab.isLogin) {
+      return <Favorite />
+    } else {
+      return (
+        <Login
+          isLogin={this.props.tab.isLogin}
+          username={this.props.tab.username}
+          password={this.props.tab.password}
+          actions={this.props.actions}/>
+      )
+    }
+
   }
 
   _renderAbout() {
@@ -53,7 +70,7 @@ export default class TabBar extends Component {
                 this.props.actions.selectTab('favorites');
               }}
           >
-            <Favorite />
+            {this._renderFavorites()}
           </TabBarIOS.Item>
           <TabBarIOS.Item
               systemIcon='more'

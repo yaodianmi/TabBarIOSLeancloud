@@ -9,3 +9,4 @@ export const MORE_SEARCH_RESULT = 'MORE_SEARCH_RESULT'
 export const NEW_SEARCH = 'NEW_SEARCH'
 
 export const SELECTED_TAB = 'SELECTED_TAB'
+export const LOGIN = 'LOGIN'
