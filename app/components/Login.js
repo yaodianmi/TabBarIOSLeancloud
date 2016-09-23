@@ -18,10 +18,6 @@ import AV from 'leancloud-storage';
 export default class Login extends Component {
   constructor(props){
     super(props);
-    this.props = {
-      username: 'guest',
-      password: 'guest',
-    };
   }
 
   componentDidMount() {
