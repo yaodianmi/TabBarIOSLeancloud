@@ -17,12 +17,14 @@ import {
     bindActionCreators
 } from 'redux';
 import debounce from 'debounce';
+import AV from 'leancloud-storage';
 
 import SearchBar from './SearchBar';
 import BookCell from './BookCell';
 import {
   hasMore,
 } from '../actions/search';
+
 
 
 const doubanApiBookSearch = 'https://api.douban.com/v2/book/search'
@@ -69,9 +71,18 @@ export default  class SearchScreen extends Component {
   }
 
   componentDidMount() {
-    if (this.props.tag) {
-      this.props.actions.runSearch(this.props.tag, 'tag');
-    }
+    console.log('SearchScreen|componentDidMount: check login');
+    AV.User.currentAsync().then((currentUser) => {
+      console.log('currentUser: ', currentUser);
+      if (currentUser) {
+        if (this.props.tag) {
+          this.props.actions.runSearch(this.props.tag, 'tag');
+        }
+      } else {
+        this.props.logIn();
+      }
+    }, (e)=>console.log(e));
+    console.log('SearchScreen|componentDidMount: check login end', AV.User.currentAsync());
   }
 
   componentWillReceiveProps(nextProps) {

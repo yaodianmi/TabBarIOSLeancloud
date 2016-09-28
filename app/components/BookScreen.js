@@ -35,47 +35,39 @@ export default class BookScreen extends Component {
   }
 
   _collect() {
-    if (true || this.props.tab.isLogin) {
-      let Book = AV.Object.extend('Book');
-      let book = new Book();
-      book.set('image', this.props.book.image);
-      book.set('title', this.props.book.title);
-      book.set('author', this.props.book.author);
-      book.set('star', this.props.book.rating.average);
-      book.save().then(function (book) {
-        console.log('Collect Book, objectId is ', book.id);
-        if (Platform.OS === 'android') {
-          ToastAndroid.show('收藏成功！你可以去Favorites查看你所收藏的书籍！', ToastAndroid.SHORT)
-        } else {
-          AlertIOS.alert(
-            '收藏成功！你可以去Favorites查看你所收藏的书籍！',
-            null,
-            [
-              {text: 'OK'},
-            ]
-          );
-        }
-      }, function (error) {
-        console.log("Collect Error: ", error);
-        if (Platform.OS === 'android') {
-          ToastAndroid.show(error.message, ToastAndroid.LONG);
-        } else {
-          AlertIOS.alert(
-            error.message,
-            null,
-            [
-              {text: 'OK'},
-            ]
-          );
-        }
-      });
-    } else {
-      <Login
-        isLogin={this.props.tab.isLogin}
-        username={this.props.tab.username}
-        password={this.props.tab.password}
-        actions={this.props.actions}/>
-    }
+    let Book = AV.Object.extend('Book');
+    let book = new Book();
+    book.set('image', this.props.book.image);
+    book.set('title', this.props.book.title);
+    book.set('author', this.props.book.author);
+    book.set('star', this.props.book.rating.average);
+    book.save().then(function (book) {
+      console.log('Collect Book, objectId is ', book.id);
+      if (Platform.OS === 'android') {
+        ToastAndroid.show('收藏成功！你可以去Favorites查看你所收藏的书籍！', ToastAndroid.SHORT)
+      } else {
+        AlertIOS.alert(
+          '收藏成功！你可以去Favorites查看你所收藏的书籍！',
+          null,
+          [
+            {text: 'OK'},
+          ]
+        );
+      }
+    }, function (error) {
+      console.log("Collect Error: ", error);
+      if (Platform.OS === 'android') {
+        ToastAndroid.show(error.message, ToastAndroid.LONG);
+      } else {
+        AlertIOS.alert(
+          error.message,
+          null,
+          [
+            {text: 'OK'},
+          ]
+        );
+      }
+    });
   }
 
   render() {

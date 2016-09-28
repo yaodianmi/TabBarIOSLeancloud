@@ -31,6 +31,7 @@ export default class Login extends Component {
     user.logIn().then((user) => {
       console.log('User logged in:', user);
       this.props.actions.login();
+      this.props.navigator.pop();
     }).catch(function(error) {
       console.log("Login Error: ", error);
       if (Platform.OS === 'android') {
@@ -56,6 +57,7 @@ export default class Login extends Component {
     user.signUp().then((user) => {
       console.log('User signed up:', user);
       this.props.actions.login(username, password);
+      this.props.navigator.pop();
     }).catch(function(error) {
       console.log("Signup Error: ", error);
       if (Platform.OS === 'android') {

@@ -14,11 +14,12 @@ import {
 
 import SearchScreenRoot from '../containers/SearchScreenRoot';
 import BookScreen from './BookScreen';
+import Login from './Login';
 
 
 const NavigationBarRouteMapper = {
   LeftButton(route, navigator, index, navState) {
-    if (index === 0) {
+    if (index === 0  || route.name == 'login') {
     	return null
     }
 
@@ -47,12 +48,27 @@ const NavigationBarRouteMapper = {
   }
 }
 
+const logIn = (navigator) => {
+  navigator.push({
+    name: 'login'
+  });
+}
+
 export default class SearchApp extends Component {
   renderScene(route, navigator){
-    if(route.name == 'book_detail') {
+    if(route.name == 'login') {
+      return (
+        <Login
+          navigator={navigator}
+          isLogin={this.props.tab.isLogin}
+          username={this.props.tab.username}
+          password={this.props.tab.password}
+          actions={this.props.actions}/>
+      )
+    } else if(route.name == 'book_detail') {
       return <BookScreen book={route.book} navigator={navigator}/>
     } else {
-      return <SearchScreenRoot navigator={navigator} tag={route.tag}/>;
+      return <SearchScreenRoot navigator={navigator} tag={route.tag} logIn={()=>logIn(navigator)}/>;
     }
   }
 
@@ -60,7 +76,7 @@ export default class SearchApp extends Component {
     return (
       <Navigator
         initialRoute={{name:'home', title:'首页', tag:'灵魂幸存者'}}
-        renderScene={this.renderScene}
+        renderScene={this.renderScene.bind(this)}
         navigationBar={
           <Navigator.NavigationBar
             style={styles.navBar}

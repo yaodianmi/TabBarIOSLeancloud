@@ -20,8 +20,8 @@ export default class TabBar extends Component {
 
   _renderFavorites() {
     console.log(this.props.actions);
-    alert(this.props.tab.isLogin);
-    if (this.props.tab.isLogin) {
+    return <Favorite />
+    /*if (this.props.tab.isLogin) {
       return <Favorite />
     } else {
       return (
@@ -31,8 +31,7 @@ export default class TabBar extends Component {
           password={this.props.tab.password}
           actions={this.props.actions}/>
       )
-    }
-
+    }*/
   }
 
   _renderAbout() {
@@ -62,7 +61,7 @@ export default class TabBar extends Component {
                 this.props.actions.selectTab('search');
               }}
           >
-            <SearchApp />
+            <SearchApp tab={this.props.tab} actions={this.props.actions}/>
           </TabBarIOS.Item>
           <TabBarIOS.Item
               systemIcon='favorites'
