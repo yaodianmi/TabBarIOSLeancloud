@@ -20,6 +20,7 @@ export default class TabBar extends Component {
 
   _renderFavorites() {
     console.log(this.props.actions);
+    alert(this.props.tab.isLogin);
     if (this.props.tab.isLogin) {
       return <Favorite />
     } else {

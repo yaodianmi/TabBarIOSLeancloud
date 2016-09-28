@@ -49,11 +49,13 @@ export default class Login extends Component {
 
   signup() {
     let user = new AV.User();
+    let username = this.props.username;
+    let password = this.props.password;
     user.set("username", this.props.username);
     user.set("password", this.props.password);
     user.signUp().then((user) => {
       console.log('User signed up:', user);
-      this.props.actions.login();
+      this.props.actions.login(username, password);
     }).catch(function(error) {
       console.log("Signup Error: ", error);
       if (Platform.OS === 'android') {
