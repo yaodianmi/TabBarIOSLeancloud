@@ -26,11 +26,13 @@ export default class Login extends Component {
 
   login() {
     let user = new AV.User();
-    user.set("username", this.props.username);
-    user.set("password", this.props.password);
+    let username = this.props.username;
+    let password = this.props.password;
+    user.set("username", username);
+    user.set("password", password);
     user.logIn().then((user) => {
       console.log('User logged in:', user);
-      this.props.actions.login();
+      this.props.actions.login(username, password);
       this.props.navigator.pop();
     }).catch(function(error) {
       console.log("Login Error: ", error);

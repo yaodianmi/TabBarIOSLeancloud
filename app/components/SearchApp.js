@@ -64,11 +64,19 @@ export default class SearchApp extends Component {
           username={this.props.tab.username}
           password={this.props.tab.password}
           actions={this.props.actions}/>
-      )
+      );
     } else if(route.name == 'book_detail') {
       return <BookScreen book={route.book} navigator={navigator}/>
     } else {
-      return <SearchScreenRoot navigator={navigator} tag={route.tag} logIn={()=>logIn(navigator)}/>;
+      return (
+        <SearchScreenRoot
+          navigator={navigator}
+          tag={route.tag}
+          logIn={()=>logIn(navigator)}
+          tab={this.props.tab}
+          tabActions={this.props.actions}
+        />
+      );
     }
   }
 

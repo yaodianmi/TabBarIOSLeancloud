@@ -24,6 +24,8 @@ export default class Favorite extends Component {
   }
 
   renderRow(book, sectionID, rowID) {
+    alert('renderRow');
+    console.log(book);
     return (
       <BookCell
         key={book.id}
@@ -42,8 +44,7 @@ export default class Favorite extends Component {
     }, function (error) {
       console.log("Query Book Error: ", error);
     });
-
-
+    alert('haha');
     return (
       <View>
         <ListView
@@ -54,7 +55,7 @@ export default class Favorite extends Component {
           keyboardDismissMode="on-drag"
           keyboardShouldPersistTaps={true}
           showsVerticalScrollIndicator={false}
-        />;
+        />
       </View>
     );
   }

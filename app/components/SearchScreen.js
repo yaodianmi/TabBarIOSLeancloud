@@ -75,6 +75,7 @@ export default  class SearchScreen extends Component {
     AV.User.currentAsync().then((currentUser) => {
       console.log('currentUser: ', currentUser);
       if (currentUser) {
+        this.props.tabActions.login(this.props.tab.username, this.props.tab.password);
         if (this.props.tag) {
           this.props.actions.runSearch(this.props.tag, 'tag');
         }
