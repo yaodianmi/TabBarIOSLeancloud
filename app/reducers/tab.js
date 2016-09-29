@@ -17,7 +17,11 @@ const tab = (state = initialSearchState, action) => {
     case SELECTED_TAB:
     	return Object.assign({}, state, {selectedTab: action.tab});
 		case LOGIN:
-			return Object.assign({}, state, {isLogin: true, username: action.username, password: action.password});
+			return Object.assign({}, state, {
+				isLogin: true,
+				username: action.username,
+				password: action.password,
+			});
     default:
     	return state;
 	}

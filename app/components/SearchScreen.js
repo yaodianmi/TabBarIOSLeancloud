@@ -87,7 +87,7 @@ export default  class SearchScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps:');
+    console.log('SearchScreen|componentWillReceiveProps:');
     console.log(nextProps);
 		this.setState({
 			dataSource: this.ds.cloneWithRows(nextProps.search.books)

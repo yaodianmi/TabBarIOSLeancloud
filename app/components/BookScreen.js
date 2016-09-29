@@ -37,6 +37,7 @@ export default class BookScreen extends Component {
   _collect() {
     let Book = AV.Object.extend('Book');
     let book = new Book();
+    book.set('bid', this.props.book.id);
     book.set('image', this.props.book.image);
     book.set('title', this.props.book.title);
     book.set('author', this.props.book.author);

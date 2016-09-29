@@ -9,54 +9,56 @@ import {
 } from 'react-native';
 import AV from 'leancloud-storage';
 
-import BookCell from './BookCell';
-
 
 export default class Favorite extends Component {
   constructor(props) {
     super(props);
-    this.ds = new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2})
+    let ds = new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2})
     this.state = {
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2,
-      }),
+      dataSource: ds.cloneWithRows(this._genRows()),
     };
+  }
+
+  _genRows() {
+    console.log('Favorite|componentDidMount:');
+    let tmpBooks = [];
+
+    new AV.Query('Book').find().then(function (books) {
+      books.filter((book)=>{
+        tmpBooks.push(book.attributes);
+      });
+      console.log('tmpBooks: ', tmpBooks);
+    }, function (error) {
+      console.log("Query Book Error: ", error);
+    });
+
+    return tmpBooks
   }
 
   renderRow(book, sectionID, rowID) {
     alert('renderRow');
-    console.log(book);
     return (
-      <BookCell
-        key={book.id}
-        book={book}
-      />
+      <View key={book.bid} style={styles.row}>
+        <Image
+          source={{uri: book.image}}
+          style={styles.cellImage}
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.bookTitle}>{book.title}</Text>
+          <Text style={styles.bookTitle}>{book.author}</Text>
+          <Text style={styles.bookTitle}>{book.star}</Text>
+        </View>
+      </View>
     );
   }
 
   render() {
-    let query = new AV.Query('Book');
-    query.find().then(function (books) {
-      console.log('Query Book:', books);
-      this.setState({
-  			dataSource: this.ds.cloneWithRows(books)
-  		});
-    }, function (error) {
-      console.log("Query Book Error: ", error);
-    });
-    alert('haha');
     return (
-      <View>
-        <ListView
-          ref="listview"
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => this.renderRow(rowData)}
-          automaticallyAdjustContentInsets={false}
-          keyboardDismissMode="on-drag"
-          keyboardShouldPersistTaps={true}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderRow}
+        enableEmptySections={true}
+      />
     );
   }
 }
